@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F1D36;
+    font-family: tahoma;
+    position: relative;
+}
+/* -------------------------------------------------------------- */
+.maps{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000093;
+    z-index: 2;
+    display: none;
+}
+.maps .continer{
+    width: 30%;
+    height: 550px;
+    background-color: #F2D7D9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%)  scale(0 , 0);
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+.maps .continer h1{
+    text-align: center;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgb(3, 22, 126) ,
+    -2px -2px 4px #1F1D36;
+}
+.maps .continer h3{
+    margin: 10px 0px 5px;
+}
+.maps .continer p{
+    text-shadow: 1px 1px 2px #076b99 ;
+}
+.maps .continer button{
+    font-size: 20px;
+    display: block;
+    width: 80%;
+    margin: 40px auto 0px;
+    background-color: crimson;
+    border: none;
+    color: #fde888;
+    padding: 5px 0px;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+.maps .continer button:hover{
+    background-color: #811667;
+    color: #d3f800;
+}
+/* ------------------------------------------------------------ */
+.setting{
+    padding: 15px;
+    width: 30%;
+    background-color: #9CB4CC;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family:tahoma;
+    position: relative;
+}
+input{
+    width: 50px;
+    outline: none;
+    margin: 5px;
+}
+label{
+    user-select: none;
+}
+.setting button{
+    border: 1px solid gray;
+    transition: all 0.4s;
+}
+#shoro{
+    display: inline-block;
+    width: 80%;
+    padding: 5px;
+    font-weight: bold;
+    font-family: tahoma;
+    border: 1px solid gray;
+    transition: all 0.4s;
+}
+#rahnama{
+    font-size: 20px;
+    border: 1px solid gray;
+    background-color: purple;
+    color: yellow;
+}
+#shoro:hover{
+    cursor: pointer;
+    background-color: #46d17b;
+    border: 1px solid gray;
+    color: rgb(80, 14, 60);
+}
+#rahnama:hover{
+    font-size: 20px;
+    border: 1px solid gray;
+    background-color: rgb(21, 104, 93);
+    color: yellow;
+}
+/* --------------------------------------------------- */
