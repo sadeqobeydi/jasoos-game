@@ -22,46 +22,51 @@ body{
     height: 100%;
     background-color: #00000093;
     z-index: 2;
-    display: none;
+    display: grid;
+    place-items: center;
 }
-.maps .continer{
+.maps .continer_map{
     width: 30%;
     height: 550px;
     background-color: #F2D7D9;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%)  scale(0 , 0);
+    transform:  scale(0 , 0);
     padding: 10px;
-    overflow: hidden;
+    overflow: auto;
     border-radius: 5px;
-
+    animation: opend;
+    transition: all 1s;
 }
-.maps .continer h1{
+.maps .act{
+    transform:  scale(1 , 1); 
+    transform-origin: center; 
+}
+
+
+.maps .continer_map h1{
     text-align: center;
     color: yellow;
     text-shadow: 2px 2px 4px rgb(3, 22, 126) ,
     -2px -2px 4px #1F1D36;
 }
-.maps .continer h3{
+.maps .continer_map h3{
     margin: 10px 0px 5px;
 }
-.maps .continer p{
+.maps .continer_map p{
     text-shadow: 1px 1px 2px #076b99 ;
 }
-.maps .continer button{
+.maps .continer_map button{
     font-size: 20px;
     display: block;
     width: 80%;
     margin: 40px auto 0px;
     background-color: crimson;
-    border: none;
     color: #fde888;
+    border: none;
     padding: 5px 0px;
     border-radius: 10px;
     transition: all 0.4s;
 }
-.maps .continer button:hover{
+.maps .continer_map button:hover{
     background-color: #811667;
     color: #d3f800;
 }
@@ -105,8 +110,8 @@ label{
 #shoro:hover{
     cursor: pointer;
     background-color: #46d17b;
+    color: #500e3c;
     border: 1px solid gray;
-    color: rgb(80, 14, 60);
 }
 #rahnama:hover{
     font-size: 20px;
@@ -114,4 +119,105 @@ label{
     background-color: rgb(21, 104, 93);
     color: yellow;
 }
+
 /* --------------------------------------------------- */
+.person{
+    width: 30%;
+    height: 550px;
+    background-color: #F2D7D9;
+    padding: 15px;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 5px;
+    animation: opend;
+    transition: all 1s;
+    font-family: tahoma; 
+    box-shadow: 3px 3px 10px black , -3px -3px 10px lightgray;
+}
+#check , #reset ,#delCars{
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 5px 0px;
+    border: 1px solid gray;
+    border-radius: 7px;
+    transition: all .3s;
+}
+#check{
+    background-color: #46d17b;
+    color: #500e3c;
+}
+
+#check.disable{
+    opacity: 0.3;
+    pointer-events: none;
+    user-select: none;
+}
+#check:hover{
+    background-color: #2a8f51;
+    box-shadow: 0 0 5px yellow;
+    color: yellow;
+}
+
+#reset{
+    background-color: #811667;
+    color: #d3f800;
+}
+#reset:hover{
+    background-color: crimson;
+    color: #fde888;
+}
+/* ----------------------------------------------------------- */
+.card{
+    width: 80%;
+    margin: 40px auto 0px;
+    background-color: #864879;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    transform: scale(0 , 0);
+    transition: all .5s;
+}
+.card img{
+    width: 80%;
+    height: 190px;
+    margin: 10px 0px;
+}
+.card h2 ,.card h3 {
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+    background-color: #3F3351;
+    border: 1px solid  yellow;
+    border-radius: 5px;
+}
+.card h2{
+    color: white;
+    text-shadow: 0 0 5px rgb(216, 86, 86) , 
+    0 0 7px yellow;
+}
+.card h3{
+    color: white;
+    text-shadow: 0 0 3px rgb(59, 238, 59) , 
+    0 0 5px hotpink;
+}
+#delCars{
+    width: 80%;
+    margin-top: 10px;
+    transition: all .3s;
+    background-image: linear-gradient(to right bottom , #4dec62 , #4d72ec);
+}
+#delCars:hover{
+    transform: scale(1.1 , 1.1);
+    color: red;
+    text-shadow: 0 0 10px wheat , 0 0 15px green;
+}
+/* ----------------------------------------------------- */
+.nondel{
+    display: none;
+}
+.active{
+    transform: scale(1,1);
+    transform-origin: center;
+}
