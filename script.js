@@ -16,6 +16,7 @@ let btnShoro = document.getElementById('shoro');
 let deletmap = document.getElementById('deletmap');
 let checkNaghsh =document.getElementById('check')
 let delCard = document.getElementById('delCars')
+let reloded = document.querySelector('#reset')
 
 // h , img
 let h2 = document.querySelector('.card h2')
@@ -30,10 +31,10 @@ let place = [
     'کتبخانه' , 'مترو' , 'تونل', 'کوهستان', 'استخر',
     'آزمایشگاه', 'معدن طلا' ,'خوابگاه'
 ];
-
+let randomPlace = Math.floor(Math.random()*place.length)
 let personal = new Array();
 
-
+///////////////////////////////////////////////////////////////////////////////
 // open and close maps rahnama
 btnRahnama.addEventListener('click' , function(){
     maps.classList.toggle('nondel');
@@ -47,6 +48,13 @@ deletmap.addEventListener('click' , function(){
     setTimeout(function(){
         maps.classList.toggle('nondel')
     },500);
+})
+
+///////////////////////////////////////////////////////////////////////////////////
+// start game and btn start
+btnShoro.addEventListener('click' , () =>{
+    handleringSetting(putgamer.value , putjasoos.value);
+    randomPlace = place[randomPlace]
 })
 
 
@@ -74,10 +82,10 @@ function handleringSetting(x , y){
     
 }
 
-// start game and btn start
-btnShoro.addEventListener('click' , () =>{
-    handleringSetting(putgamer.value , putjasoos.value);
-
+///////////////////////////////////////////////////////////////////
+// relode
+reloded.addEventListener('click' , ()=>{
+    window.location.reload()
 })
 
 ///////////////////////////////////////////////////////////////////
@@ -93,42 +101,25 @@ checkNaghsh.addEventListener('click' , () =>{
 })
 
 function handlerNaghsh(){
-    let rnadomNum = Math.floor(Math.random()* personal.length )
-    console.log(rnadomNum);
+    let randomNaghsh = Math.floor(Math.random()* personal.length )
+    console.log(randomNaghsh);
 
-    if(personal[rnadomNum] === 'دانا'){
+    if(personal[randomNaghsh] === 'دانا'){
         img.setAttribute('src' , 'images/221.jpg')
-
-
+        h3.innerHTML = `مکان : ${randomPlace}`
     }
     else{
         img.setAttribute('src' , 'images/gilar-ir-Spy-tools.jpg') 
         h3.innerHTML = "مکان : نامعلوم"
     }
-    h2.innerHTML= personal[rnadomNum]
+    h2.innerHTML= personal[randomNaghsh]
     
-    // h2.innerHTML= personal[rnadomNum]
+    personal.splice(randomNaghsh , 1)
+    console.log(personal);
+ 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////////////////////
 //close card
 delCard.onclick = function(){
     card.classList.toggle("active")
@@ -138,6 +129,12 @@ delCard.onclick = function(){
     },300)
 
     checkNaghsh.classList.toggle('disable')
+
+    if(personal.length===0){
+        person.classList.toggle('nondel')
+        settin.classList.toggle('nondel')
+    }
 }
+
 
 
