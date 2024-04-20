@@ -23,15 +23,19 @@ let h2 = document.querySelector('.card h2')
 let h3 =  document.querySelector('.card h3')
 let img =  document.querySelector('.card img')
 
-
+////////////////////////////////////////////////////
+// variebels global
 let place = [
     'رستوران','مدرسه','شهر بازی','بیمارستان',
     'جنگل','دریا','پارکینگ','سینما','کافه',
     'فرودگاه','ترمینال', 'سالن کنسرت' , 'جاده',
     'کتبخانه' , 'مترو' , 'تونل', 'کوهستان', 'استخر',
-    'آزمایشگاه', 'معدن طلا' ,'خوابگاه'
+    'آزمایشگاه', 'معدن طلا' ,'خوابگاه','نجاری', 'باشگاه',
+    'کوهستان' , 'باغ', 'بانک', 'پمپ بنزین','ساحل','مسجد',
+    'اقیانوس'
 ];
-let randomPlace = Math.floor(Math.random()*place.length)
+
+let randomPlace ;
 let personal = new Array();
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -54,7 +58,9 @@ deletmap.addEventListener('click' , function(){
 // start game and btn start
 btnShoro.addEventListener('click' , () =>{
     handleringSetting(putgamer.value , putjasoos.value);
+    randomPlace = Math.floor(Math.random()*place.length)
     randomPlace = place[randomPlace]
+
 })
 
 
@@ -115,8 +121,7 @@ function handlerNaghsh(){
     h2.innerHTML= personal[randomNaghsh]
     
     personal.splice(randomNaghsh , 1)
-    console.log(personal);
- 
+    
 }
 
 /////////////////////////////////////////////////////////////////////////////

@@ -221,3 +221,56 @@ label{
     transform: scale(1,1);
     transform-origin: center;
 }
+
+@media screen and (max-width: 768px){
+    .setting {
+        width: 70%;
+    }
+    .maps .continer_map{
+        width: 70%;
+       
+    }
+    .person{
+        width: 70%;
+    }
+}
+
+@media screen  and (max-width: 576px){
+    
+    .setting {
+        width: 90%;
+    }
+    .maps .continer_map{
+        width: 90%;
+    }
+    .person{
+        width: 90%;
+    }
+    
+}
+
+@media screen  and (min-width: 768px){
+    .setting {
+        width: 50%;
+    }
+    .maps .continer_map{
+        width: 50%;
+       
+    }
+    .person{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 992px){
+    .setting {
+        width: 30%;
+    }
+    .maps .continer_map{
+        width: 30%;
+       
+    }
+    .person{
+        width: 30%;
+    }
+}
+
